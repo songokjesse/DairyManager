@@ -2,17 +2,10 @@
 
 
 @section('content')
-    <div class="row">
-        <div class="col-lg-12 margin-tb">
-            <div class="pull-left">
-                <h2>Edit Role</h2>
-            </div>
-            <div class="pull-right">
-                <a class="btn btn-primary" href="{{ route('roles.index') }}"> Back</a>
-            </div>
-        </div>
-    </div>
-
+    <div class="container">
+        <div class="row">
+            @include('admin.sidebar')
+            <div class="col-md-9">
 
     @if (count($errors) > 0)
         <div class="alert alert-danger">
@@ -25,6 +18,12 @@
         </div>
     @endif
 
+        <div class="card">
+            <div class="card-header">Edit Role</div>
+            <div class="card-body">
+                <div class="pull-right">
+                    <a class="btn btn-primary btn-sm" href="{{ route('roles.index') }}"> Back</a>
+                </div>
 
     {!! Form::model($role, ['method' => 'PATCH','route' => ['roles.update', $role->id]]) !!}
     <div class="row">
@@ -51,5 +50,9 @@
     </div>
     {!! Form::close() !!}
 
-
+            </div>
+        </div>
+            </div>
+        </div>
+    </div>
 @endsection

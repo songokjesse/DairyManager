@@ -2,19 +2,16 @@
 
 
 @section('content')
-    <div class="row">
-        <div class="col-lg-12 margin-tb">
-            <div class="pull-left">
-                <h2> Show User</h2>
-            </div>
-            <div class="pull-right">
-                <a class="btn btn-primary" href="{{ route('users.index') }}"> Back</a>
-            </div>
-        </div>
-    </div>
-
-
-    <div class="row">
+    <div class="container">
+        <div class="row">
+            @include('admin.sidebar')
+            <div class="col-md-9">
+                <div class="card">
+                    <div class="card-header"> Show User</div>
+                    <div class="card-body">
+                        <a class="btn btn-primary btn-sm" href="{{ route('users.index') }}"> Back</a>
+                        <br>
+                    <div class="row">
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
                 <strong>Name:</strong>
@@ -35,6 +32,12 @@
                         <label class="badge badge-success">{{ $v }}</label>
                     @endforeach
                 @endif
+            </div>
+        </div>
+    </div>
+
+                    </div>
+                </div>
             </div>
         </div>
     </div>

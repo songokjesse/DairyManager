@@ -1,16 +1,13 @@
 <?php $__env->startSection('content'); ?>
     <div class="container">
         <div class="row">
-
-            <?php if($message = Session::get('success')): ?>
-                <div class="alert alert-success">
-                    <p><?php echo e($message); ?></p>
-                </div>
-            <?php endif; ?>
-
             <?php echo $__env->make('admin.sidebar', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
-
             <div class="col-md-9">
+                <?php if($message = Session::get('success')): ?>
+                    <div class="alert alert-success">
+                        <p><?php echo e($message); ?></p>
+                    </div>
+                <?php endif; ?>
                 <div class="card">
                     <div class="card-header">Users Management</div>
                     <div class="card-body">
@@ -41,11 +38,11 @@
                     <?php endif; ?>
                 </td>
                 <td>
-                    <a class="btn btn-info" href="<?php echo e(route('users.show',$user->id)); ?>">Show</a>
-                    <a class="btn btn-primary" href="<?php echo e(route('users.edit',$user->id)); ?>">Edit</a>
+                    <a class="btn btn-info btn-sm" href="<?php echo e(route('users.show',$user->id)); ?>">Show</a>
+                    <a class="btn btn-primary btn-sm" href="<?php echo e(route('users.edit',$user->id)); ?>">Edit</a>
                     <?php echo Form::open(['method' => 'DELETE','route' => ['users.destroy', $user->id],'style'=>'display:inline']); ?>
 
-                    <?php echo Form::submit('Delete', ['class' => 'btn btn-danger']); ?>
+                    <?php echo Form::submit('Delete', ['class' => 'btn btn-danger btn-sm']); ?>
 
                     <?php echo Form::close(); ?>
 
