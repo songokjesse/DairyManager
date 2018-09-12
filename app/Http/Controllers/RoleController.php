@@ -31,7 +31,7 @@ class RoleController extends Controller
     public function index(Request $request)
     {
         $roles = Role::orderBy('id','DESC')->paginate(5);
-        return view('roles.index',compact('roles'))
+        return view('admin.roles.index',compact('roles'))
             ->with('i', ($request->input('page', 1) - 1) * 5);
     }
 
@@ -44,7 +44,7 @@ class RoleController extends Controller
     public function create()
     {
         $permission = Permission::get();
-        return view('roles.create',compact('permission'));
+        return view('admin.roles.create',compact('permission'));
     }
 
 
@@ -66,7 +66,7 @@ class RoleController extends Controller
         $role->syncPermissions($request->input('permission'));
 
 
-        return redirect()->route('roles.index')
+        return redirect()->route('admin.roles.index')
             ->with('success','Role created successfully');
     }
     /**
@@ -83,7 +83,7 @@ class RoleController extends Controller
             ->get();
 
 
-        return view('roles.show',compact('role','rolePermissions'));
+        return view('admin.roles.show',compact('role','rolePermissions'));
     }
 
 
@@ -102,7 +102,7 @@ class RoleController extends Controller
             ->all();
 
 
-        return view('roles.edit',compact('role','permission','rolePermissions'));
+        return view('admin.roles.edit',compact('role','permission','rolePermissions'));
     }
 
 
@@ -129,7 +129,7 @@ class RoleController extends Controller
         $role->syncPermissions($request->input('permission'));
 
 
-        return redirect()->route('roles.index')
+        return redirect()->route('admin.roles.index')
             ->with('success','Role updated successfully');
     }
     /**
@@ -141,7 +141,7 @@ class RoleController extends Controller
     public function destroy($id)
     {
         \DB::table("roles")->where('id',$id)->delete();
-        return redirect()->route('roles.index')
+        return redirect()->route('admin.roles.index')
             ->with('success','Role deleted successfully');
     }
 }
