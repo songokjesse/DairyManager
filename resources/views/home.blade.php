@@ -45,7 +45,7 @@
                                     <div class="card text-white bg-secondary mb-3" style="max-width: 18rem;">
                                         <div class="card-header">Production</div>
                                         <div class="card-body">
-                                            <h5 class="card-title"><i class="fas fa-database fa-4x"></i>
+                                            <h5 class="card-title"><i class="fas fa-coins fa-4x"></i>
 
                                             </h5>
                                             </div>
