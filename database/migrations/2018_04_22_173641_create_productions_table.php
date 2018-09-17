@@ -16,7 +16,7 @@ class CreateProductionsTable extends Migration
             $table->increments('id');
             $table->timestamps();
             $table->float('amount')->nullable();
-            $table->float('MilkingSession')->nullable();
+            $table->string('MilkingSession')->nullable();
             $table->integer('animal_id')->unsigned();
             $table->integer('user_id')->unsigned();
             $table->foreign('animal_id')->references('id')->on('animals');

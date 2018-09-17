@@ -25,7 +25,7 @@ class Animal extends Model
      *
      * @var array
      */
-    protected $fillable = ['name', 'breed', 'calves'];
+    protected $fillable = ['name', 'breed', 'calves','lastCalvingDate'];
 
     
 }

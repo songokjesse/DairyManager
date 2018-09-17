@@ -18,6 +18,7 @@ class CreateAnimalsTable extends Migration
             $table->string('name')->nullable();
             $table->string('breed');
             $table->integer('calves')->nullable();
+            $table->date('lastCalvingDate')->nullable();
             });
     }
 

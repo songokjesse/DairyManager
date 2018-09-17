@@ -27,7 +27,7 @@
                                     <tr>
                                         <th>ID</th><td>{{ $animal->id }}</td>
                                     </tr>
-                                    <tr><th> Name </th><td> {{ $animal->name }} </td></tr><tr><th> Breed </th><td> {{ $animal->breed }} </td></tr><tr><th> Calves </th><td> {{ $animal->calves }} </td></tr>
+                                    <tr><th> Name </th><td> {{ $animal->name }} </td></tr><tr><th> Breed </th><td> {{ $animal->breed }} </td></tr><tr><th> Calves </th><td> {{ $animal->calves }} </td></tr><tr><th>Last Calving Date </th><td> {{ $animal->lastCalvingDate }} </td></tr>
                                 </tbody>
                             </table>
                         </div>

@@ -30,14 +30,14 @@
                             <table class="table">
                                 <thead>
                                     <tr>
-                                        <th>#</th><th>Name</th><th>Breed</th><th>Calves</th><th>Actions</th>
+                                        <th>#</th><th>Name</th><th>Breed</th><th>Calves</th><th>Last Calving</th><th>Actions</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                 <?php $__currentLoopData = $animals; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $item): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                                     <tr>
                                         <td><?php echo e(isset($loop->iteration) ? $loop->iteration : $item->id); ?></td>
-                                        <td><?php echo e($item->name); ?></td><td><?php echo e($item->breed); ?></td><td><?php echo e($item->calves); ?></td>
+                                        <td><?php echo e($item->name); ?></td><td><?php echo e($item->breed); ?></td><td><?php echo e($item->calves); ?></td><td><?php echo e($item->lastCalvingDate); ?></td>
                                         <td>
                                             <a href="<?php echo e(url('/animals/' . $item->id)); ?>" title="View Animal"><button class="btn btn-info btn-sm"><i class="fa fa-eye" aria-hidden="true"></i> View</button></a>
                                             <a href="<?php echo e(url('/animals/' . $item->id . '/edit')); ?>" title="Edit Animal"><button class="btn btn-primary btn-sm"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit</button></a>

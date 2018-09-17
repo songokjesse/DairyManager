@@ -28,6 +28,7 @@ class AnimalsController extends Controller
             $animals = Animal::where('name', 'LIKE', "%$keyword%")
                 ->orWhere('breed', 'LIKE', "%$keyword%")
                 ->orWhere('calves', 'LIKE', "%$keyword%")
+                ->orWhere('lastCalvingDate', 'LIKE', "%$keyword%")
                 ->latest()->paginate($perPage);
         } else {
             $animals = Animal::latest()->paginate($perPage);
@@ -57,7 +58,8 @@ class AnimalsController extends Controller
     {
         $this->validate($request, [
 			'name' => 'required|max:100',
-			'calves' => 'required|max:10'
+			'calves' => 'required|max:10',
+			'lastCalvingDate' => 'required'
 		]);
         $requestData = $request->all();
         
@@ -106,8 +108,9 @@ class AnimalsController extends Controller
     {
         $this->validate($request, [
 			'name' => 'required|max:100',
-			'calves' => 'required|max:10'
-		]);
+			'calves' => 'required|max:10',
+            'lastCalvingDate' => 'required'
+        ]);
         $requestData = $request->all();
         
         $animal = Animal::findOrFail($id);

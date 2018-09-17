@@ -20,6 +20,12 @@
         <input class="form-control" name="calves" type="number" id="calves" value="{{ $animal->calves or ''}}" required>
         {!! $errors->first('calves', '<p class="help-block">:message</p>') !!}
     </div>
+</div><div class="form-group {{ $errors->has('lastCalvingDate') ? 'has-error' : ''}}">
+    <label for="calves" class="col-md-4 control-label">{{ 'Last Calving Date' }}</label>
+    <div class="col-md-6">
+        <input class="form-control" id="datepicker" name="lastCalvingDate" value="{{ $animal->lastCalvingDate or ''}}" required>
+        {!! $errors->first('lastCalvingDate', '<p class="help-block">:message</p>') !!}
+    </div>
 </div>
 
 <div class="form-group">
