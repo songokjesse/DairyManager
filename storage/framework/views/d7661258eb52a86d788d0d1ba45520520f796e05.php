@@ -17,7 +17,7 @@
                             <div class="row">
                                 <div class="col-sm">
 
-                                   <a href="#">
+                                   <a href="/users">
                                        <div class="card text-white bg-success mb-3" style="max-width: 18rem;">
 
                                         <div class="card-header">Users</div>
@@ -28,7 +28,7 @@
                                    </a>
                                 </div>
                                 <div class="col-sm">
-                                    <a href="#">
+                                    <a href="/animals">
                                     <div class="card text-white bg-primary mb-3" style="max-width: 18rem;">
                                         <div class="card-header"> Animals</div>
                                         <div class="card-body">
@@ -40,7 +40,7 @@
                                     </a>
                                 </div>
                                 <div class="col-sm">
-                                    <a href="#">
+                                    <a href="/production">
                                     <div class="card text-white bg-secondary mb-3" style="max-width: 18rem;">
                                         <div class="card-header">Production</div>
                                         <div class="card-body">
