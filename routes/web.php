@@ -35,4 +35,6 @@ Route::group(['middleware' => ['auth']], function() {
     Route::resource('users','UserController');
     Route::resource('animals', 'AnimalsController');
     Route::resource('production', 'ProductionController');
+    Route::get('create','ImageController@create');
+    Route::post('create','ImageController@store');
 });
